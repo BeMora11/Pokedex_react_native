@@ -1,12 +1,16 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Navigation from './src/navigation/Navigation';
+import { AuthProvider } from './src/context/AuthContext';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <AuthProvider>
+        <Navigation />
+      </AuthProvider>
+    </NavigationContainer>
   );
 }
 
